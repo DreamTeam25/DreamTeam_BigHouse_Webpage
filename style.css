@@ -1,0 +1,798 @@
+/* Базовые настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+    color: #000;
+}
+
+/* ШАПКА */
+.header {
+    background-image: url('IMG/Header.png');
+    background-size: cover;
+    padding: 20px 40px;
+}
+
+.header-overlay {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid #e6e6e6;
+    border-radius: 12px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+.logo-image { width: 60px; height: auto; }
+
+.nav-menu { display: flex; gap: 30px; }
+.nav-menu a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    font-size: 15px;
+    transition: 0.3s;
+}
+.nav-menu a:hover { color: #367C48; }
+
+.phone-number-wrapper {
+    background-color: #367C48;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 6px;
+}
+
+/* HERO СЕКЦИЯ */
+.hero {
+    background-image: url('IMG/FonDOM.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 40px;
+}
+
+.hero__inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.hero__content {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 60px;
+    border-radius: 4px;
+    max-width: 900px;
+}
+
+.hero__header-group {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.hero__label {
+    border: 2px solid #000;
+    padding: 10px 20px;
+    font-size: 38px;
+    font-weight: 800;
+}
+
+.hero__subtitle {
+    font-size: 18px;
+    max-width: 350px;
+    font-weight: 500;
+}
+
+.hero__main-title {
+    font-size: 48px;
+    font-weight: 800;
+    border: 2px solid #000;
+    display: inline-block;
+    padding: 10px 20px;
+    margin-left: 60px;
+    margin-bottom: 40px;
+}
+
+.hero__footer-group {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-left: 60px;
+}
+
+.button_zaiavka {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 20px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.hero__description {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.hero__right {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px 30px;
+    border-radius: 4px;
+}
+
+.building-types { display: flex; flex-direction: column; gap: 20px; }
+.building-type span { font-weight: 600; font-size: 14px; letter-spacing: 1px; }
+
+/* СЕКЦИЯ О НАС */
+.about-section {
+    padding: 50px 0;
+    font-family: 'Jost', sans-serif;
+}
+
+.container {
+    align-items: center;
+    padding: 40px;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.about-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.about-brand {
+    font-weight: 600;
+    color: #999;
+    font-size: 24px;
+}
+
+.about-title-block {
+    text-align: right;
+    max-width: 500px;
+}
+
+.about-h2 {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 35px;
+    position: relative;
+    display: inline-block;
+}
+
+.about-h2::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+    width: 85px;
+    height: 4px;
+    background: #000;
+}
+
+.about-lead {
+    font-size: 20px;
+    color: #555;
+    line-height: 1.1;
+    max-width: 1500px;
+
+}
+
+.about-body {
+    display: flex;
+    align-items: start;
+    gap: 50px;
+    margin-left: 200px;
+}
+
+.phone-img { width: 100%; max-width:x; }
+
+.about-features {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.feature-item {
+    position: relative;
+}
+
+.feature-item h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+.feature-item p {
+    font-size: 20px;
+    color: #666;
+    max-width: 400px;
+    line-height: 1.6;
+}
+
+.deco-corner {
+    position: absolute;
+    left: -30px;
+    bottom: -10px;
+    width: 25px;
+    height: 25px;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Адаптивность */
+@media (max-width: 1100px) {
+    .hero__inner, .about-body, .about-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .about-title-block { text-align: center; margin-top: 20px; }
+    .hero__main-title, .hero__footer-group { margin-left: 0; }
+    .about-h2::after { right: 50%; transform: translateX(50%); }
+    .deco-corner { left: 50%; transform: translateX(-50%); }
+}
+
+/* ========== СЕКЦИЯ ПРЕИМУЩЕСТВ ========== */
+.benefits-section {
+    padding: 50px 0;
+    background-color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.benefits-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 60px;
+}
+
+.benefits-title {
+    font-size: 42px;
+    font-weight: 800;
+    text-align: right;
+    line-height: 1.1;
+    position: relative;
+}
+
+/* Линия под заголовком как в макете */
+.benefits-title::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -15px;
+    width: 100px;
+    height: 5px;
+    background: #000000;
+}
+
+/* Сетка карточек */
+.benefits-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 100px;
+}
+
+.benefit-card {
+    flex: 1;
+    background: #ffffff;
+    border-radius: 4px;
+    padding: 30px;
+    min-height: 380px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    margin-bottom: 56px;
+}
+
+.benefit-card2{
+    flex: 1;
+    background: #ffffff;
+    border-radius: 4px;
+    padding: 30px;
+    min-height: 380px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    margin-top: 56px;
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+}
+
+.benefit-card h3 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 40px;
+    line-height: 1.2;
+}
+
+.benefit-card2:hover {
+    transform: translateY(-10px);
+}
+
+.benefit-card2 h3 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 40px;
+    line-height: 1.2;
+}
+
+.card-icon {
+    width: 100%;
+    height: auto;
+    max-width: 180px;
+    margin: auto auto 0 auto;
+    display: block;
+}
+
+/* Секция статистики */
+.stats-row {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #eee;
+    padding-top: 40px;
+}
+
+.stat-item {
+    flex: 1;
+    border-left: 1px solid #000;
+    padding-left: 20px;
+}
+
+.stat-number {
+    font-size: 115px;
+    font-weight: 100;
+    line-height: 1;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.stat-text {
+    font-size: 16px;
+    color: #888;
+    max-width: 380px;
+    line-height: 1.4;
+}
+
+/* Адаптивность для нового блока */
+@media (max-width: 1100px) {
+    .benefits-grid {
+        flex-wrap: wrap;
+    }
+    .benefit-card {
+        flex: 0 0 calc(50% - 20px);
+    }
+    .stats-row {
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+    .stat-item {
+        flex: 0 0 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 600px) {
+    .benefit-card, .stat-item {
+        flex: 0 0 100%;
+    }
+    .benefits-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .benefits-title {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .benefits-title::after {
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
+
+/* ========== СЕКЦИЯ ПРОЕКТОВ ========== */
+.projects-section {
+    padding: 80px 0;
+    background-color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container-wide {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.projects-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 60px;
+}
+
+.projects-title-wrap {
+    text-align: right;
+}
+
+.projects-title {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.title-underline {
+    width: 120px;
+    height: 4px;
+    background: #333;
+    margin-left: auto;
+}
+
+/* Сетка с использованием Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+/* Большая карточка занимает 2 колонки */
+.project-card.large {
+    grid-column: span 2;
+}
+
+.project-img-container {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.project-img-container img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+.project-price {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 8px 15px;
+    font-size: 20px;
+    border-radius: 2px;
+}
+
+/* Кнопка Смотреть еще */
+.projects-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.button-more {
+    background: none;
+    border: 1px solid #ccc;
+    padding: 15px 60px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button-more:hover {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .project-card.large {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    .project-card.large {
+        grid-column: span 1;
+    }
+    .projects-header {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .projects-title-wrap {
+        text-align: left;
+    }
+    .title-underline {
+        margin-left: 0;
+    }
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+/* Настройка для больших карточек (Санкт-Петербург и Владивосток) */
+.project-card.large {
+    grid-column: span 2;
+}
+
+/* Стили заголовков внутри карточек */
+.project-info h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #367C48;
+    margin: 10px 0 5px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.project-info p {
+    font-size: 20px;
+    color: #999;
+}
+
+/* ========== СЕКЦИЯ КАРЬЕРА ========== */
+.career-section {
+    padding: 100px 0;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.container-career {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.career-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.career-main-title {
+    font-size: 56px;
+    font-weight: 800;
+    text-align: right;
+}
+
+.career-content {
+    display: flex;
+    gap: 60px;
+    position: relative;
+}
+
+/* Левая часть с краном */
+.career-visual {
+    flex: 0 0 800px;
+    position: relative;
+}
+
+.crane-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Правая часть с текстом */
+.career-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+}
+
+.career-block {
+    max-width: 700px;
+}
+
+/* Сдвиг центрального блока вправо как в макете */
+.career-block.shift-right {
+    align-self: flex-end;
+}
+
+.tags-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    justify-content: flex-end;
+}
+
+.tag {
+    font-size: 16px;
+    border: 1px solid #ddd;
+    padding: 5px 15px;
+    color: #999;
+    border-radius: 2px;
+}
+
+.career-text-box {
+    border: 1px solid #ccc;
+    padding: 40px;
+    background: #fff;
+}
+
+.career-text-box h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.career-text-box p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    .career-content {
+        flex-direction: column;
+    }
+    .career-visual {
+        flex: none;
+        width: 100%;
+        max-height: 400px;
+        overflow: hidden;
+    }
+    .career-block.shift-right {
+        align-self: flex-start;
+    }
+}
+
+/* ========== СЕКЦИЯ ЭТАПЫ РАБОТЫ ========== */
+.steps-section {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 100px 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container-steps {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.steps-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+}
+
+.about-brand.white { color: #666; }
+.title-underline.white { background: #fff; margin-left: auto; width: 100px; height: 4px; }
+
+.steps-main-title {
+    font-size: 42px;
+    font-weight: 800;
+    text-align: right;
+    line-height: 1.2;
+}
+
+.steps-timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    padding-left: 150px;
+}
+
+/* Вертикальная линия */
+.timeline-line {
+    position: absolute;
+    left: 285px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #ffffff;
+    z-index: 1;
+}
+
+.step-item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    z-index: 2;
+    align-items: stretch;
+}
+
+/* Контурные цифры */
+.step-number {
+    font-size: 250px;
+    font-weight: 500;
+    line-height: 0.8;
+    color: rgb(255, 255, 255);
+    min-width: 220px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Последняя цифра закрашена */
+.step-number.filled {
+    color: #ffffff;
+    -webkit-text-stroke: 0;
+}
+
+.step-content {
+    padding-top: 20px;
+    max-width: 400px;
+}
+
+.step-descr {
+    font-size: 18px;
+    color: #aaa;
+    margin-bottom: 110px;
+    line-height: 1;
+}
+
+.step-content h3 {
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 1.1;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .steps-timeline { padding-left: 0; }
+    .timeline-line { display: none; }
+    .step-item { flex-direction: column; margin-bottom: 40px; }
+    .step-number { font-size: 100px; margin-bottom: 20px; }
+    .steps-main-title { font-size: 32px; }
+}
+
+.step-item-center{
+    justify-content: center;
+}
+
+.step-item-right{
+    justify-content: right;
+}
+
+.step-divider {
+    width: 4px;          
+    background-color: #fff; 
+    margin: 0 10px;       
+    flex-shrink: 0;       
+}
+
