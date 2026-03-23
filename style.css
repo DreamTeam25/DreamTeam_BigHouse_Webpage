@@ -25,17 +25,15 @@ body {
 }
 
 .header-overlay {
-    position: fixed; /* Фиксирует шапку относительно окна браузера */
-    top: 30px;          /* Прижимает к самому верху */
-    left: 0;         /* Растягивает от левого края */
-    width: 95%;     /* Растягивает на всю ширину */
-    z-index: 1000;   /* Поднимает шапку над всеми остальными блоками */
-    margin-left: 60px;
-    margin-right: 60px;
-    
-    /* Дополнительно: добавьте фон и тень, чтобы текст сайта не просвечивал */
-    background: rgba(255, 255, 255, 0.95); 
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(calc(100% - 120px), 1850px);
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 14px;
     transition: all 0.3s ease;
 }
 
@@ -912,18 +910,17 @@ body {
 @media (max-width: 768px) {
     .reviews-header {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
         gap: 0px;
     }
-    .reviews-title-block {
-        text-align: center;
-    }
+
     .black-line {
         margin-left: 0;
     }
     .review-card {
         min-width: 300px;
     }
+
 }
 
 /* ========== КОНТАКТЫ ========== */
@@ -936,7 +933,6 @@ body {
 .contacts-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
     margin-bottom: 80px;
 }
 
@@ -948,7 +944,7 @@ body {
 }
 
 .title-wrap {
-    text-align: right;
+    text-align: center;
 }
 
 .section-title {
@@ -1028,6 +1024,10 @@ body {
     }
     .contacts-info-grid {
         grid-template-columns: 1fr;
+    }
+
+    .black-line {
+        margin-left: auto;
     }
 }
 
@@ -1260,13 +1260,12 @@ body {
 
 .contact-icon {
     width: 20px;
-    margin-top: 5px;
     /* Если используете иконки-картинки, можно добавить фильтр для смены цвета на зеленый */
     filter: invert(34%) sepia(48%) saturate(464%) hue-rotate(85deg) brightness(95%) contrast(88%);
 }
 
 .contact-link {
-    display: block;
+    display: flex;
     color: #9CA3AF;
     text-decoration: none;
     font-size: 16px;
@@ -1275,12 +1274,120 @@ body {
 
 .contact-text span, 
 .contact-text p {
+    display: flex;
+    justify-content: space-between;
     font-size: 15px;
     color: #9CA3AF;
     line-height: 1.5;
-    margin: 0;
+    text-align: start;
+}
+.form-popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 3000;
 }
 
+.form-popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.form-popup {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 32px 24px 24px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    transform: translateY(20px) scale(0.96);
+    transition: 0.3s ease;
+}
+
+.form-popup-overlay.active .form-popup {
+    transform: translateY(0) scale(1);
+}
+
+.form-popup-icon {
+    width: 68px;
+    height: 68px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: #367C48;
+    color: #fff;
+    font-size: 34px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-popup.error .form-popup-icon {
+    background: #d64545;
+}
+
+.form-popup-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #000;
+}
+
+.form-popup-text {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.form-popup-button {
+    border: none;
+    background: #367C48;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.form-popup-close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    border: none;
+    background: transparent;
+    font-size: 28px;
+    cursor: pointer;
+    color: #555;
+}
+
+body.popup-open {
+    overflow: hidden;
+}
+
+@media (max-width: 480px) {
+    .form-popup {
+        padding: 28px 18px 22px;
+    }
+
+    .form-popup-title {
+        font-size: 22px;
+    }
+
+    .form-popup-text {
+        font-size: 14px;
+    }
+}
 /* Адаптивность для мобильных устройств */
 @media (max-width: 1024px) {
     .footer-grid {
@@ -1293,15 +1400,64 @@ body {
     .footer-grid {
         grid-template-columns: 1fr;
     }
-    .footer-brand, .footer-nav, .footer-contacts {
-        text-align: center;
-    }
+
     .footer-description {
-        margin: 0 auto 30px;
+        display: flex;
+        text-align: left;
     }
     .contact-item {
         justify-content: center;
+
     }
+
+    .footer-contacts {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .footer-nav {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .footer-list {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .footer-brand {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: start;
+    }
+
+
+    .hero__description {
+        display: none; 
+    }
+    
+    .hero__subtitle {
+        display: none; 
+    }
+
+
+    .hero__header-group,
+    .hero__main-title,
+    .button_zaiavka {
+
+        margin: 15px 30px;
+
+    }
+
+
+
 }
 
 .project-detail {
@@ -1326,7 +1482,7 @@ body {
     display: flex;
     gap: 40px;
     margin-bottom: 60px;
-    align-items: flex-start;
+
 }
 
 .project-main-image {
@@ -1418,7 +1574,7 @@ body {
 
     .header-overlay {
         width: calc(100% - 40px);
-        margin: 0 20px;
+        
         top: 15px;
     }
 
@@ -1449,6 +1605,29 @@ body {
     .stat-number {
         font-size: 70px;
     }
+
+    .spec-row {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+    }
+
+
+    .hero__header-group,
+    .hero__main-title,
+    .button_zaiavka {
+
+        margin: 15px 30px;
+
+    }
+
+    .building-types {
+        display: flex;
+        flex-direction: row;
+        margin-top: 100px;
+    }
+
 }
 
 
@@ -1600,6 +1779,23 @@ body {
     .career-section{
         margin-bottom: 50px;
     }
+
+    .spec-row {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+    }
+
+
+    .hero__header-group,
+    .hero__main-title,
+    .button_zaiavka {
+
+        margin: 15px 30px;
+
+    }
+
 }
 
 
@@ -1645,7 +1841,6 @@ body {
     }
 
     .button_zaiavka {
-        width: 100%;
         padding: 16px 90px;
         font-size: 12px;
     }
@@ -1725,8 +1920,11 @@ body {
     /* Футер */
 
     .footer-grid {
+        display: flex;
+        flex-direction: column-reverse;
         grid-template-columns: 1fr;
         text-align: center;
+
     }
 
     .contact-item {
@@ -1771,7 +1969,9 @@ body {
         align-items: center;
     }
 
-    
+    .title-wrap {
+        text-align: center;
+    }
 
     .career-title-wrap{
         display: flex;
@@ -1820,11 +2020,15 @@ body {
         justify-content: center;
         flex-direction: column;
         align-items: center;
+        text-align: center;
+    }
+
+    .black-line {
+        margin: auto;
     }
 
     .reviews-title{
         display: flex;
-        justify-content: center;
         flex-direction: column;
         align-items: center;
         left: 0px;
@@ -1854,7 +2058,7 @@ body {
     }
 
     .label-tag{
-        margin-bottom: 20px;
+        display: none;
     }
 
     .checkbox-container{
@@ -1886,11 +2090,18 @@ body {
         flex-direction: column;
         align-items: flex-start;
         padding: 32px 12px;
+
+    }
+    
+    .spec-row {
+        display: flex;
+        justify-content: space-between;
         width: 100%;
+
     }
 
 
-
+    
 }
 
 /* ===== FIX МОБИЛЬНОЙ ВЕРСИИ ЭТАПОВ ===== */
