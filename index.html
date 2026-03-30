@@ -8,6 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="IMG/favikon.png">
+    <link rel="shortcut icon" href="IMG/favikon.png">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -175,94 +179,108 @@
             </div>
 
             <div class="projects-grid">
-                <div class="project-card">
-                    <a href="index2.html" class="project-link">
-                        <div class="project-img-container">
-                            <img src="IMG/Barnaul.png" alt="Барнаул">
-                    </a>
-                        <span class="project-price">от 7 500 000 ₽</span>
-                    </div>
-                    <div class="project-info">
-                        <a href="index2.html" class="project-link">
-                            <h3>БАРНАУЛ <span>&rarr;</span></h3>
-                        </a>
-                        <p>2022</p>
-                    </div>
-                </div>
-
-                <div class="project-card large">
-                    <div class="project-img-container">
-                        <img src="IMG\Piter.png" alt="Санкт-Петербург">
-                        <span class="project-price">от 7 500 000 ₽</span>
-                    </div>
-                    <div class="project-info">
-                        <h3>САНКТ-ПЕТЕРБУРГ <span>&rarr;</span></h3>
-                        <p>2022</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img-container">
-                        <img src="IMG/Ekb.png" alt="Екатеринбург">
-                        <span class="project-price">от 7 500 000 ₽</span>
-                    </div>
-                    <div class="project-info">
-                        <h3>ЕКАТЕРИНБУРГ <span>&rarr;</span></h3>
-                        <p>2024</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                <div class="project-img-container">
-                    <img src="IMG/Krasnodar.png" alt="Краснодар">
-                    <span class="project-price">от 7 500 000 ₽</span>
-                </div>
-                <div class="project-info">
-                    <h3>КРАСНОДАР <span>&rarr;</span></h3>
-                    <p>2021</p>
-                </div>
+    <div class="project-card">
+        <a href="index2.html?house=barnaul" class="project-link">
+            <div class="project-img-container">
+                <img src="IMG/Barnaul.png" alt="Барнаул">
+                <span class="project-price">от 7 500 000 ₽</span>
             </div>
+            <div class="project-info">
+                <h3>БАРНАУЛ <span>&rarr;</span></h3>
+                <p>2022</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="project-card large">
+        <a href="index2.html?house=piter" class="project-link">
+            <div class="project-img-container">
+                <img src="IMG/Piter.png" alt="Санкт-Петербург">
+                <span class="project-price">от 7 500 000 ₽</span>
+            </div>
+            <div class="project-info">
+                <h3>САНКТ-ПЕТЕРБУРГ <span>&rarr;</span></h3>
+                <p>2022</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="project-card">
+        <a href="index2.html?house=ekb" class="project-link">
+            <div class="project-img-container">
+                <img src="IMG/Ekb.png" alt="Екатеринбург">
+                <span class="project-price">от 7 500 000 ₽</span>
+            </div>
+            <div class="project-info">
+                <h3>ЕКАТЕРИНБУРГ <span>&rarr;</span></h3>
+                <p>2024</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="project-card">
+        <a href="index2.html?house=krasnodar" class="project-link">
+            <div class="project-img-container">
+                <img src="IMG/Krasnodar.png" alt="Краснодар">
+                <span class="project-price">от 7 500 000 ₽</span>
+            </div>
+            <div class="project-info">
+                <h3>КРАСНОДАР <span>&rarr;</span></h3>
+                <p>2021</p>
+            </div>
+        </a>
+    </div>
 
             <div class="project-card large">
-                <div class="project-img-container">
-                    <img src="IMG/Vladivostok.png" alt="Владивосток">
-                    <span class="project-price">от 7 500 000 ₽</span>
-                </div>
-                <div class="project-info">
-                    <h3>ВЛАДИВОСТОК <span>&rarr;</span></h3>
-                    <p>2025</p>
-                </div>
+                <a href="index2.html?house=vladivostok" class="project-link">
+                    <div class="project-img-container">
+                        <img src="IMG/Vladivostok.png" alt="Владивосток">
+                        <span class="project-price">от 7 500 000 ₽</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>ВЛАДИВОСТОК <span>&rarr;</span></h3>
+                        <p>2025</p>
+                    </div>
+                </a>
             </div>
 
             <div class="project-card">
-                <div class="project-img-container">
-                    <img src="IMG/Novo.png" alt="Новосибирск">
-                    <span class="project-price">от 7 500 000 ₽</span>
-                </div>
-                <div class="project-info">
-                    <h3>НОВОСИБИРСК <span>&rarr;</span></h3>
-                    <p>2023</p>
-                </div>
+                <a href="index2.html?house=novosibirsk" class="project-link">
+                    <div class="project-img-container">
+                        <img src="IMG/Novo.png" alt="Новосибирск">
+                        <span class="project-price">от 7 500 000 ₽</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>НОВОСИБИРСК <span>&rarr;</span></h3>
+                        <p>2023</p>
+                    </div>
+                </a>
             </div>
 
             <div class="project-card">
-                <div class="project-img-container">
-                    <img src="IMG/Rostov.png" alt="Ростов-на-Дону">
-                    <span class="project-price">от 7 500 000 ₽</span>
-                </div>
-                <div class="project-info">
-                    <h3>РОСТОВ-НА-ДОНУ <span>&rarr;</span></h3>
-                    <p>2021</p>
-                </div>
+                <a href="index2.html?house=rostov" class="project-link">
+                    <div class="project-img-container">
+                        <img src="IMG/Rostov.png" alt="Ростов-на-Дону">
+                        <span class="project-price">от 7 500 000 ₽</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>РОСТОВ-НА-ДОНУ <span>&rarr;</span></h3>
+                        <p>2021</p>
+                    </div>
+                </a>
             </div>
 
             <div class="project-card">
-                <div class="project-img-container">
-                    <img src="IMG/vologda.png" alt="Вологда">
-                    <span class="project-price">от 8 500 000 ₽</span>
-                </div>
-                <div class="project-info">
-                    <h3>ВОЛОГДА <span>&rarr;</span></h3>
-                    <p>2022</p>
-                </div>
+                <a href="index2.html?house=vologda" class="project-link">
+                    <div class="project-img-container">
+                        <img src="IMG/vologda.png" alt="Вологда">
+                        <span class="project-price">от 8 500 000 ₽</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>ВОЛОГДА <span>&rarr;</span></h3>
+                        <p>2022</p>
+                    </div>
+                </a>
             </div>
         </div>
             </div>
@@ -494,7 +512,7 @@
         <form class="application-form">
             <div class="form-grid">
                 <div class="input-group">
-                    <input type="text" id="name" name="name" placeholder="Имя*" required>
+                    <input type="text" id="name" name="name" placeholder="ФИО*" required>
                 </div>
                 <div class="input-group">
                     <input type="email" id="email" name="email" placeholder="Email*" required>
@@ -512,7 +530,7 @@
                     <label class="checkbox-container">
                         <input type="checkbox" checked required>
                         <span class="checkmark"></span>
-                        Я даю согласие на <a href="#">обработку персональных данных</a>
+                        Я даю согласие на &nbsp;<a href="#"> обработку персональных данных</a>
                     </label>
                 </div>
                 

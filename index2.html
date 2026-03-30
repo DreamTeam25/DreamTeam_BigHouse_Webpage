@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="IMG/favikon.png">
+    <link rel="shortcut icon" href="IMG/favikon.png">
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
 
@@ -15,16 +19,16 @@
         <div class="header-overlay">
             <div class="header-container">
                 <div class="logo-block">
-                    <a href="index.html"> 
+                    <a href="index.html">
                         <img src="IMG/LogoDom.png" alt="Большой Дом" class="logo-image">
                     </a>
                 </div>
                 <nav class="nav-menu">
-                    <a href="#">Преимущества</a>
-                    <a href="#">Проекты</a>
-                    <a href="#">Этапы</a>
-                    <a href="#">Отзывы</a>
-                    <a href="#">Контакты</a>
+                    <a href="index.html#Prem">Преимущества</a>
+                    <a href="index.html#project">Проекты</a>
+                    <a href="index.html#satages">Этапы</a>
+                    <a href="index.html#reviews">Отзывы</a>
+                    <a href="index.html#contakt">Контакты</a>
                 </nav>
                 <div class="phone-block">
                     <div class="phone-number-wrapper">
@@ -36,203 +40,210 @@
     </header>
 
     <section class="project-detail">
-    <div class="container-wide">
-        <div class="form-header_page2">
-            <span class="label-tag">[ Город ]</span>
-            <h1 class="project-main-title">Барнаул</h1>
-        </div>
+        <div class="container-wide">
+            <div class="form-header_page2">
+                <span class="label-tag">[ Город ]</span>
+                <h1 class="project-main-title" id="house-title">Барнаул</h1>
+            </div>
 
-        <div class="project-info-block">
-            <div class="project-main-image">
-                <img src="IMG/Page2_1.png" alt="Проект Барнаул">
-            </div>
-            
-            <div class="project-specifications">
-                <div class="spec-row">
-                    <span class="spec-label">Год</span>
-                    <span class="spec-value">2023</span>
+            <div class="project-info-block">
+                <div class="project-main-image">
+                    <img id="house-main-image" src="IMG/Page2_1.png" alt="Проект дома">
                 </div>
-                <div class="spec-row">
-                    <span class="spec-label">Стадия</span>
-                    <span class="spec-value">Строительство</span>
-                </div>
-                <div class="spec-row">
-                    <span class="spec-label">Цена</span>
-                    <span class="spec-value">7 500 000 ₽</span>
-                </div>
-                <div class="spec-row">
-                    <span class="spec-label">Площадь</span>
-                    <span class="spec-value">450 м²</span>
-                </div>
-                <div class="spec-row">
-                    <span class="spec-label">Фундамент</span>
-                    <span class="spec-value">Кирпич</span>
-                </div>
-                <div class="spec-row">
-                    <span class="spec-label">Перекрытия</span>
-                    <span class="spec-value">Монолитные</span>
-                </div>
-                <div class="spec-row">
-                    <span class="spec-label">Внутренняя отделка</span>
-                    <span class="spec-value">Чистовая, включая покраску <br> стен, укладку ламината </br> и установку сантехники</span>
-                </div>
-            </div>
-        </div>
 
-        <div class="project-gallery">
-            <div class="gallery-item full-width">
-                <img src="IMG/Page2_2.png" alt="Экстерьер">
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="IMG/Page2_3.png" alt="Вид сбоку">
+                <div class="project-specifications">
+                    <div class="spec-row">
+                        <span class="spec-label">Год</span>
+                        <span class="spec-value" id="house-year">2023</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">Стадия</span>
+                        <span class="spec-value" id="house-stage">Строительство</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">Цена</span>
+                        <span class="spec-value" id="house-price">7 500 000 ₽</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">Площадь</span>
+                        <span class="spec-value" id="house-area">450 м²</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">Фундамент</span>
+                        <span class="spec-value" id="house-foundation">Кирпич</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">Перекрытия</span>
+                        <span class="spec-value" id="house-floors">Монолитные</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">Внутренняя отделка</span>
+                        <span class="spec-value" id="house-finish">
+                            Чистовая, включая покраску стен, укладку ламината и установку сантехники
+                        </span>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="IMG/Page2_4.png" alt="Детали фасада">
-                </div>
             </div>
-            <div class="gallery-item full-width">
-                <img src="IMG/Page2_5.png" alt="Вид вечером">
+
+            <div class="project-gallery">
+                <div class="gallery-item full-width">
+                    <img id="gallery-1" src="IMG/Page2_2.png" alt="Фото дома 1">
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img id="gallery-2" src="IMG/Page2_3.png" alt="Фото дома 2">
+                    </div>
+                    <div class="gallery-item">
+                        <img id="gallery-3" src="IMG/Page2_4.png" alt="Фото дома 3">
+                    </div>
+                </div>
+                <div class="gallery-item full-width">
+                    <img id="gallery-4" src="IMG/Page2_5.png" alt="Фото дома 4">
+                </div>
             </div>
         </div>
-    </div>
     </section>
 
-    <section class="contacts-section">
-    <div class="container-wide">
-        <div class="contacts-header">
-            <span class="label-tag">[ геолокация ]</span>
-            <div class="title-wrap">
-                <h2 class="section-title">Контакты</h2>
-                <div class="title-line"></div>
+    <section class="contacts-section" id="contakt">
+        <div class="container-wide">
+            <div class="contacts-header">
+                <span class="label-tag">[ геолокация ]</span>
+                <div class="title-wrap">
+                    <h2 class="section-title">Контакты</h2>
+                    <div class="title-line"></div>
+                </div>
             </div>
-        </div>
 
-        <div class="contacts-info-grid">
-            <div class="info-item">
-                <h5>ГЛАВНЫЙ ОФИС</h5>
-                <p>Россия, 191186, <br> Санкт-Петербург, <br> ул. Большая Морская, 18</p>
+            <div class="contacts-info-grid">
+                <div class="info-item">
+                    <h5>ГЛАВНЫЙ ОФИС</h5>
+                    <p>Россия, 191186, <br> Санкт-Петербург, <br> ул. Большая Морская, 18</p>
+                </div>
+                <div class="info-item">
+                    <h5>ГОРЯЧАЯ ЛИНИЯ</h5>
+                    <a class="info-item">8 (812) 111-22-33</a>
+                </div>
+                <div class="info-item">
+                    <h5>ПОЧТА</h5>
+                    <a class="info-item">info@bighouse.ru</a>
+                </div>
+                <div class="info-item">
+                    <h5>ВРЕМЯ РАБОТЫ</h5>
+                    <p>Ежедневно с 9:00 до 20:00</p>
+                </div>
             </div>
-            <div class="info-item">
-                <h5>ГОРЯЧАЯ ЛИНИЯ</h5>
-                <a class="info-item">8 (812) 111-22-33</a>
-            </div>
-            <div class="info-item">
-                <h5>ПОЧТА</h5>
-                <a class="info-item">info@bighouse.ru</a>
-            </div>
-            <div class="info-item">
-                <h5>ВРЕМЯ РАБОТЫ</h5>
-                <p>Ежедневно с 9:00 до 20:00</p>
-            </div>
-        </div>
 
-        <div class="map-container">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.60372338662!2d30.319520477382452!3d59.93375836166418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca566909%3A0x67399088686d1a93!2z0JHQvtC70YzRiNCw0Y8g0JzQvtGA0YHQutCw0Y8g0YPQuy4sIDE4LCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywgMTkxMTg2!5e0!3m2!1sru!2sru!4v1709400000000!5m2!1sru!2sru" 
-                width="100%" 
-                height="450" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.60372338662!2d30.319520477382452!3d59.93375836166418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca566909%3A0x67399088686d1a93!2z0JHQvtC70YzRiNCw0Y8g0JzQvtGA0YHQutCw0Y8g0YPQuy4sIDE4LCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywgMTkxMTg2!5e0!3m2!1sru!2sru!4v1709400000000!5m2!1sru!2sru"
+                    width="100%"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
         </div>
-    </div>
     </section>
+
     <section class="form-section">
-    <div class="container-wide">
-        <div class="form-header">
-            <span class="label-tag">[ форма ]</span>
-            <div class="title-wrap">
-                <h2 class="section-title">Оставить заявку</h2>
-                <div class="title-line"></div>
+        <div class="container-wide">
+            <div class="form-header">
+                <span class="label-tag">[ форма ]</span>
+                <div class="title-wrap">
+                    <h2 class="section-title">Оставить заявку</h2>
+                    <div class="title-line"></div>
+                </div>
             </div>
+
+            <form class="application-form">
+                <div class="form-grid">
+                    <div class="input-group">
+                        <input type="text" id="name" name="name" placeholder="ФИО*" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" name="email" placeholder="Email*" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="tel" id="phone" name="phone" placeholder="Телефон*" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="info" name="info" placeholder="Доп. информация">
+                    </div>
+                </div>
+
+                <div class="form-footer">
+                    <div class="privacy-policy">
+                        <label class="checkbox-container">
+                            <input type="checkbox" checked required>
+                            <span class="checkmark"></span>
+                            Я даю согласие на &nbsp;<a href="#">обработку персональных данных</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">ОТПРАВИТЬ</button>
+                </div>
+            </form>
         </div>
-
-        <form class="application-form">
-            <div class="form-grid">
-                <div class="input-group">
-                    <input type="text" id="name" name="name" placeholder="Имя*" required>
-                </div>
-                <div class="input-group">
-                    <input type="email" id="email" name="email" placeholder="Email*" required>
-                </div>
-                <div class="input-group">
-                    <input type="tel" id="phone" name="phone" placeholder="Телефон*" required>
-                </div>
-                <div class="input-group">
-                    <input type="text" id="info" name="info" placeholder="Доп. информация">
-                </div>
-            </div>
-
-            <div class="form-footer">
-                <div class="privacy-policy">
-                    <label class="checkbox-container">
-                        <input type="checkbox" checked required>
-                        <span class="checkmark"></span>
-                        Я даю согласие на <a href="#">обработку персональных данных</a>
-                    </label>
-                </div>
-                
-                <button type="submit" class="submit-btn">ОТПРАВИТЬ</button>
-            </div>
-        </form>
-    </div>
     </section>
+
     <footer class="footer">
-    <div class="container-wide">
-        <div class="footer-grid">
-            
-            <div class="footer-brand">
-                <h2 class="footer-logo">Большой Дом</h2>
-                <p class="footer-description">
-                    Проектирование и строительство комфортных загородных домов «под ключ» с гарантией качества и фиксированной сметой.
-                </p>
-                <p class="footer-copyright">
-                    © 2026 Компания «Большой дом». Все права защищены.
-                </p>
-            </div>
+        <div class="container-wide">
+            <div class="footer-grid">
 
-            <div class="footer-nav">
-                <h4 class="footer-title">НАВИГАЦИЯ</h4>
-                <ul class="footer-list">
-                    <li><a href="#">О нас</a></li>
-                    <li><a href="#">Преимущества</a></li>
-                    <li><a href="#">Проекты домов</a></li>
-                    <li><a href="#">Карьера</a></li>
-                    <li><a href="#">Этапы работы</a></li>
-                    <li><a href="#">Отзывы</a></li>
-                </ul>
-            </div>
+                <div class="footer-brand">
+                    <h2 class="footer-logo">Большой Дом</h2>
+                    <p class="footer-description">
+                        Проектирование и строительство комфортных загородных домов «под ключ» с гарантией качества и фиксированной сметой.
+                    </p>
+                    <p class="footer-copyright">
+                        © 2026 Компания «Большой дом». Все права защищены.
+                    </p>
+                </div>
 
-            <div class="footer-contacts">
-                <h4 class="footer-title">КОНТАКТЫ</h4>
-                
-                <div class="contact-item">
-                    <img src="IMG/iconify-icon.png" alt="" class="contact-icon">
-                    <div class="contact-text">
-                        <a href="tel:88121112233" class="contact-link">8 (812) 111-22-33</a>
-                        <span>Ежедневно с 9:00 до 20:00</span>
+                <div class="footer-nav">
+                    <h4 class="footer-title">НАВИГАЦИЯ</h4>
+                    <ul class="footer-list">
+                        <li><a href="index.html#about_us">О нас</a></li>
+                        <li><a href="index.html#Prem">Преимущества</a></li>
+                        <li><a href="index.html#project">Проекты домов</a></li>
+                        <li><a href="index.html#work">Карьера</a></li>
+                        <li><a href="index.html#satages">Этапы работы</a></li>
+                        <li><a href="index.html#reviews">Отзывы</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contacts">
+                    <h4 class="footer-title">КОНТАКТЫ</h4>
+
+                    <div class="contact-item">
+                        <img src="IMG/iconify-icon.png" alt="" class="contact-icon">
+                        <div class="contact-text">
+                            <a href="tel:88121112233" class="contact-link">8 (812) 111-22-33</a>
+                            <span>Ежедневно с 9:00 до 20:00</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="IMG/iconify-icon2.png" alt="" class="contact-icon">
+                        <div class="contact-text">
+                            <a href="mailto:info@bighouse.ru" class="contact-link">info@bighouse.ru</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="IMG/SVG.png" alt="" class="contact-icon">
+                        <div class="contact-text">
+                            <p>Россия, 191186, Санкт-Петербург, <br>ул. Большая Морская, 18</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="contact-item">
-                    <img src="IMG/iconify-icon2.png" alt="" class="contact-icon">
-                    <div class="contact-text">
-                        <a href="mailto:info@bighouse.ru" class="contact-link">info@bighouse.ru</a>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <img src="IMG/SVG.png" alt="" class="contact-icon">
-                    <div class="contact-text">
-                        <p>Россия, 191186, Санкт-Петербург, <br>ул. Большая Морская, 18</br></p>
-                    </div>
-                </div>
             </div>
-
         </div>
-    </div>
+    </footer>
 
+    <script src="house-page.js"></script>
 </body>
+</html>
